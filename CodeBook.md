@@ -12,7 +12,7 @@ Extracts only the measurements on the mean and standard deviation for each measu
 Uses descriptive activity names to name the activities in the data set
 Appropriately labels the data set with descriptive variable names. 
 From the data set in step 4, creates a second, independent tidy data set with the average of each variable
-for each activity and each subject.
+for each activity and each subject. Some work for creating the tidy_data file was adapted from http://stackoverflow.com/questions/22475400/r-replace-values-in-data-frame-using-lookup-table
 
 The result is saved as tidy_data.txt is a data frame where:
 
