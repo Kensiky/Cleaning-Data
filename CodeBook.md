@@ -15,6 +15,7 @@ From the data set in step 4, creates a second, independent tidy data set with th
 for each activity and each subject.
 
 The result is saved as tidy_data.txt is a data frame where:
+
 Column 1     | subject IDs
 
 Column 2     | activity names
