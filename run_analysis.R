@@ -1,13 +1,13 @@
 #---------Merge training and test sets---------
-X <- rbind(read.table("c:/UCI HAR Dataset/train/X_train.txt"), read.table("c:/UCI HAR Dataset/test/X_test.txt"))
-Subject <- rbind(read.table("c:/UCI HAR Dataset/train/subject_train.txt"), read.table("c:/UCI HAR Dataset/test/subject_test.txt"))
-Y <- rbind(read.table("c:/UCI HAR Dataset/train/y_train.txt"), read.table("c:/UCI HAR Dataset/test/y_test.txt"))
+X <- rbind(read.table("train/X_train.txt"), read.table("test/X_test.txt"))
+Subject <- rbind(read.table("train/subject_train.txt"), read.table("test/subject_test.txt"))
+Y <- rbind(read.table("train/y_train.txt"), read.table("test/y_test.txt"))
 #---------Extracts measurements mean and standard deviation---------
-features <- read.table("c:/UCI HAR Dataset/features.txt")
+features <- read.table("features.txt")
 interestingFeatures <- features[grep("(mean|std)\\(", features[,2]),]
 mean_and_std <- X[,interestingFeatures[,1]]
 #---------Descriptive activity names---------
-activities <- read.table("c:/UCI HAR Dataset/activity_labels.txt")
+activities <- read.table("activity_labels.txt")
 activities[, 2] = gsub("_", "", tolower(as.character(activities[, 2])))
 Y[,1] = activities[Y[,1], 2]
 names(Y) = "activity"
@@ -28,5 +28,5 @@ for (s in 1:length(unique(Subject)[,1])){
     count = count+1
   }
 }
-write.table(result, "c:/UCI HAR Dataset/tidy_data.txt")
+write.table(result, "tidy_data.txt")
 #---------------------------------------------------------------------------------
